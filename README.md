@@ -17,15 +17,13 @@ Because it's so prolific, almost all web content and computer games are color gr
 
 As an example, we can take a look at Diablo IV, a game that is meant to be dark and gritty.
 
-<figure>
-	<img src='./d4_gamma2p2.png' alt='Diablo IV in SDR (gamma 2.2 tone curve tone curve)' />
-	<figcaption><center><em>Diablo IV in SDR (gamma 2.2 tone curve tone curve)</em></center></figcaption>
-</figure>
+| ![Diablo IV in SDR (gamma 2.2 tone curve tone curve)](./d4_gamma2p2.png) |
+| ------------------------------------------------------------------------ |
+| _Diablo IV in SDR (gamma 2.2 tone curve tone curve)_                     |
 
-<figure>
-	<img src='./d4_srgb.png' alt='Diablo IV in HDR (sRGB tone curve)' />
-	<figcaption><center><em>Diablo IV in HDR (sRGB tone curve)</em></center></figcaption>
-</figure>
+| ![Diablo IV in HDR (sRGB tone curve)](./d4_srgb.png) |
+| ---------------------------------------------------- |
+| _Diablo IV in HDR (sRGB tone curve)_                 |
 
 Diablo IV looks absolutely spectacular in SDR, with deep shadow detail and excellent use of dithering to prevent blacks from appearing blotchy.
 
@@ -35,19 +33,17 @@ On the other hand, there have been countless complaints about the game looking w
 
 We can plot the output luminance of sRGB vs. gamma 2.2 to see the the concrete differences:
 
-<figure>
-	<img src='./srgb_vs_g22.png' alt='Gamma 2.2 vs Piecewise sRGB chart' />
-	<figcaption><center><em>Gamma 2.2 vs Piecewise sRGB chart. The luminance axis is in log space since our eyes perceive the sensation of lightess logarithmically.</em></center></figcaption>
-</figure>
+| ![Gamma 2.2 vs Piecewise sRGB chart](./srgb_vs_g22.png)                                                                                   |
+| ----------------------------------------------------------------------------------------------------------------------------------------- |
+| _Gamma 2.2 vs Piecewise sRGB chart. The luminance axis is in log space since our eyes perceive the sensation of lightess logarithmically_ |
 
 Here, the discrepancy between gamma 2.2 and sRGB is obvious. The sRGB curve is fundamentally much lighter below the mid-tones, making content mastered in gamma-2.2 appear flat when viewed with an sRGB transfer.
 
 macOS currently offers a nice solution, allowing its users to create their own custom reference mode in the dispay settings. Among a few others, one of the custom parameters is the _SDR Transfer Function_, which the user can pick between BT.1886 (for film), a pure gamma (2.2, for PC use), or piecewise sRGB (for treason).
 
-<figure>
-	<img src='./macos_crf.png' alt='Gamma 2.2 vs Piecewise sRGB chart' />
-	<figcaption><center><em>macOS custom reference mode allows the SDR Transfer Function to be adjusted</em></center></figcaption>
-</figure>
+| ![macOS custom reference mode](./macos_crf.png)                               |
+| ----------------------------------------------------------------------------- |
+| _macOS custom reference mode allows the SDR Transfer Function to be adjusted_ |
 
 # Temporary solution
 
