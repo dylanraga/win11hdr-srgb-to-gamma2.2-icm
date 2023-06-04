@@ -2,7 +2,7 @@
 
 ## <a href='#icm-dl'>Jump to downloads</a>
 
-Windows 11 has made strides in streamlining the HDR experience, finally allowing for casual workstations where HDR is always enabled throughout the desktop. This is made possible by emulating an SDR color space within the native HDR color space so that both types of content can coexist.
+Windows 11 has made strides in streamlining the HDR experience, finally allowing for casual workstations where HDR is always enabled throughout the desktop. This is made possible by emulating an SDR color space within the native HDR10 composition space so that both types of content can coexist.
 
 However, the specifications for "SDR" can sometimes be ambiguous since there are multiple standards that depend on viewing parameters.
 
