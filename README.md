@@ -17,9 +17,9 @@ Because it's so prolific, almost all web content and computer games are color gr
 
 As an example, we can take a look at Diablo IV, a game that is meant to be dark and gritty.
 
-| ![Diablo IV in SDR (gamma 2.2 tone curve tone curve)](./d4_gamma2p2.png) |
+| ![Diablo IV in SDR (gamma 2.2 tone curve)](./d4_gamma2p2.png) |
 | ------------------------------------------------------------------------ |
-| _Diablo IV in SDR (gamma 2.2 tone curve tone curve)_                     |
+| _Diablo IV in SDR (gamma 2.2 tone curve)_                     |
 
 | ![Diablo IV in HDR (sRGB tone curve)](./d4_srgb.png) |
 | ---------------------------------------------------- |
