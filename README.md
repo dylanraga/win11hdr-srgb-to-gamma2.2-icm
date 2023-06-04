@@ -55,10 +55,10 @@ An accurate curve mapping does depend on Window's _SDR content brightness_ value
 
 <h2 id='icm-dl'>Download srgb_to_gamma2p2 color profile</h2>
 
-- [100 nits / Brightness 5](./srgb_to_gamma2p2_100_mhc2.icm)
-- [200 nits / Brightness 30](./srgb_to_gamma2p2_200_mhc2.icm)
-- [300 nits / Brightness 55](./srgb_to_gamma2p2_300_mhc2.icm)
-- [400 nits / Brightness 80](./srgb_to_gamma2p2_400_mhc2.icm)
+- [100 nits / Brightness 5](https://github.com/dylanraga/win11hdr-srgb-to-gamma2.2-icm/raw/main/srgb_to_gamma2p2_100_mhc2.icm)
+- [200 nits / Brightness 30](https://github.com/dylanraga/win11hdr-srgb-to-gamma2.2-icm/raw/main/srgb_to_gamma2p2_200_mhc2.icm)
+- [300 nits / Brightness 55](https://github.com/dylanraga/win11hdr-srgb-to-gamma2.2-icm/raw/main/srgb_to_gamma2p2_300_mhc2.icm)
+- [400 nits / Brightness 80](https://github.com/dylanraga/win11hdr-srgb-to-gamma2.2-icm/raw/main/srgb_to_gamma2p2_400_mhc2.icm)
 
 ## Windows SDR content brightness table
 
