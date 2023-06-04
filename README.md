@@ -18,7 +18,7 @@ Because it's so prolific, almost all web content and computer games are color gr
 As an example, we can take a look at Diablo IV, a game that is meant to be dark and gritty.
 
 | ![Diablo IV in SDR (gamma 2.2 tone curve)](./d4_gamma2p2.png) |
-| ------------------------------------------------------------------------ |
+| ------------------------------------------------------------- |
 | _Diablo IV in SDR (gamma 2.2 tone curve)_                     |
 
 | ![Diablo IV in HDR (sRGB tone curve)](./d4_srgb.png) |
@@ -62,15 +62,15 @@ An accurate curve mapping does depend on Window's _SDR content brightness_ value
 
 ## Windows SDR content brightness table
 
-| SDR content brightness | Screen nits |
-| ---------------------- | ----------- |
-| 0                      | 80          |
-| 5                      | 100         |
-| 10                     | 120         |
-| 30                     | 200         |
-| 55                     | 300         |
-| 80                     | 400         |
-| 100                    | 480         |
+| SDR brightness value | SDR white screen luminance |
+| -------------------- | -------------------------- |
+| 0                    | 80 nits                    |
+| 5                    | 100 nits                   |
+| 10                   | 120 nits                   |
+| 30                   | 200 nits                   |
+| 55                   | 300 nits                   |
+| 80                   | 400 nits                   |
+| 100                  | 480 nits                   |
 
 ## Instructions
 
