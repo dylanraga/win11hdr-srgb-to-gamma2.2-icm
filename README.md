@@ -17,9 +17,9 @@ Because it's so prolific, almost all web content and computer games are color gr
 
 As an example, we can take a look at Diablo IV, a game that is meant to be dark and gritty.
 
-| ![Diablo IV in SDR (gamma 2.2 tone curve)](./d4_gamma2p2.png) |
+| ![Diablo IV in SDR (gamma 2.2 tone curve tone curve)](./d4_gamma2p2.png) |
 | ------------------------------------------------------------------------ |
-| _Diablo IV in SDR (gamma 2.2 tone curve)_                     |
+| _Diablo IV in SDR (gamma 2.2 tone curve tone curve)_                     |
 
 | ![Diablo IV in HDR (sRGB tone curve)](./d4_srgb.png) |
 | ---------------------------------------------------- |
@@ -71,6 +71,17 @@ An accurate curve mapping does depend on Window's _SDR content brightness_ value
 | 55                     | 300         |
 | 80                     | 400         |
 | 100                    | 480         |
+
+## Instructions
+
+1. Download one of the color profiles above
+2. Open Windows' "Color Management" utility
+3. Press "Add" on the bottom left
+4. Press "Browse..." and select the color profile you downloaded
+5. Enable the "Add as HDR Profile" checkbox
+6. Press "OK"
+7. Select the color profile you added and press "Set as Default Profile"
+8. Done
 
 ## Notes
 
