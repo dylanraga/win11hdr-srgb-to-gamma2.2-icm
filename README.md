@@ -17,13 +17,13 @@ Because it's so prolific, almost all web content and computer games are color gr
 
 As an example, we can take a look at Diablo IV, a game that is meant to be dark and gritty.
 
-| ![Diablo IV in SDR (gamma 2.2 tone curve)](./d4_gamma2p2.png) |
-| ------------------------------------------------------------- |
-| _Diablo IV in SDR (gamma 2.2 tone curve)_                     |
-
 | ![Diablo IV in HDR (sRGB tone curve)](./d4_srgb.png) |
 | ---------------------------------------------------- |
 | _Diablo IV in HDR (sRGB tone curve)_                 |
+
+| ![Diablo IV in SDR (gamma 2.2 tone curve)](./d4_gamma2p2.png) |
+| ------------------------------------------------------------- |
+| _Diablo IV in SDR (gamma 2.2 tone curve)_                     |
 
 Diablo IV looks absolutely spectacular in SDR, with deep shadow detail and excellent use of dithering to prevent blacks from appearing blotchy.
 
@@ -60,6 +60,17 @@ An accurate curve mapping does depend on Window's _SDR content brightness_ value
 - [300 nits / Brightness 55](https://github.com/dylanraga/win11hdr-srgb-to-gamma2.2-icm/raw/main/srgb_to_gamma2p2_300_mhc2.icm)
 - [400 nits / Brightness 80](https://github.com/dylanraga/win11hdr-srgb-to-gamma2.2-icm/raw/main/srgb_to_gamma2p2_400_mhc2.icm)
 
+## Instructions
+
+1. Download one of the color profiles above
+2. Open Windows' "Color Management" utility
+3. Press "Add" on the bottom left
+4. Press "Browse..." and select the color profile you downloaded
+5. Enable the "Add as HDR Profile" checkbox
+6. Press "OK"
+7. Select the color profile you added and press "Set as Default Profile"
+8. Done
+
 ## Windows SDR content brightness table
 
 | SDR brightness value | SDR white screen luminance |
@@ -71,17 +82,6 @@ An accurate curve mapping does depend on Window's _SDR content brightness_ value
 | 55                   | 300 nits                   |
 | 80                   | 400 nits                   |
 | 100                  | 480 nits                   |
-
-## Instructions
-
-1. Download one of the color profiles above
-2. Open Windows' "Color Management" utility
-3. Press "Add" on the bottom left
-4. Press "Browse..." and select the color profile you downloaded
-5. Enable the "Add as HDR Profile" checkbox
-6. Press "OK"
-7. Select the color profile you added and press "Set as Default Profile"
-8. Done
 
 ## Notes
 
