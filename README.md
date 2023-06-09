@@ -86,6 +86,7 @@ An accurate curve mapping does depend on Window's _SDR content brightness_ value
 ## Notes
 
 - The gamma ramp correction will persist when toggling HDR (including via the keyboard shortcut), making SDR appear darker. When disabling HDR, make sure to re-apply your SDR color profile in the Color Management utility ("Set as Default Profile"). Likewise, when re-enabling HDR, make sure to re-apply the corrective color profile. If you don't have an SDR color profile, press "Add" and select _sRGB IEC61966-2.1_ as your default profile.
+- If you have an NVIDIA GPU, make sure the NVCP desktop color settings is set to "Accurate" or "Enhanced" mode; the correction will not apply in "Reference" mode.
 - All profiles are tagged with a peak luminance of 800 nits and a black level of 0
 - Pixel values above diffuse SDR white are untouched; a soft shoulder was added toward unity to blend the curve mapping with HDR values
 - Tested on an LG C2 OLED
