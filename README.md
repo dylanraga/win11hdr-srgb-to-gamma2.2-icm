@@ -29,8 +29,6 @@ Diablo IV looks absolutely spectacular in SDR, with deep shadow detail and excel
 
 On the other hand, there have been countless complaints about the game looking washed out when HDR is enabled, swaying many players to simply enjoy the game in SDR. When HDR is enabled, rich blacks turn into dull grays, and the game's atmosphere turns hazy, losing much of its depth. The primary cause of this is — _you guessed it_ — the piecewise sRGB tone curve that Windows uses in HDR.
 
-<em><small>Note: Only games with HDR implementations that output to scRGB are susceptible to this issue, which includes any game enhanced by Window's Auto-HDR. Engines that output to ST2084 are not affected.</small></em>
-
 We can plot the output luminance of sRGB vs. gamma 2.2 to see the the concrete differences:
 
 | ![Gamma 2.2 vs Piecewise sRGB chart](./srgb_vs_g22.png)                                                                                   |
