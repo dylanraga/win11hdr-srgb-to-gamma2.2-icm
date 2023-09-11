@@ -65,10 +65,10 @@ An accurate curve mapping does depend on Window's _SDR content brightness_ value
 2. Open Windows' "Color Management" utility
 3. Press "Add" on the bottom left
 4. Press "Browse..." and select the color profile you downloaded
-5. Enable the "Add as HDR Profile" checkbox
-6. Press "OK"
-7. Select the color profile you added and press "Set as Default Profile"
-8. Done
+5. Enable the "Add as HDR Profile" checkbox (sometimes called "Advanced color")
+7. Press "OK"
+8. Select the color profile you added and press "Set as Default Profile"
+9. Done
 
 ## Windows SDR content brightness table
 
@@ -81,6 +81,10 @@ An accurate curve mapping does depend on Window's _SDR content brightness_ value
 | 55                   | 300 nits                   |
 | 80                   | 400 nits                   |
 | 100                  | 480 nits                   |
+
+## Dynamic application with AutoHotkey
+
+A script has been created by [@mspeedo](https://github.com/mspeedo) to apply the tone correction curve for different white levels and gamma power exponents! You can take a look at it [here](https://github.com/dylanraga/win11hdr-srgb-to-gamma2.2-icm/issues/7).
 
 ## Notes
 
