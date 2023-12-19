@@ -35,6 +35,7 @@ We can plot the output luminance of sRGB vs. gamma 2.2 to see the the concrete d
 | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | _Gamma 2.2 vs Piecewise sRGB chart. The luminance axis is in log space since our eyes perceive the sensation of lightess logarithmically_ |
 
+s
 Here, the discrepancy between gamma 2.2 and sRGB is obvious. The sRGB curve is fundamentally much lighter below the mid-tones, making content mastered in gamma-2.2 appear flat when viewed with an sRGB transfer.
 
 macOS currently offers a nice solution, allowing its users to create their own custom reference mode in the dispay settings. Among a few others, one of the custom parameters is the _SDR Transfer Function_, which the user can pick between BT.1886 (for film), a pure gamma (2.2, for PC use), or piecewise sRGB (for treason).
@@ -66,9 +67,34 @@ An accurate curve mapping does depend on Window's _SDR content brightness_ value
 3. Press "Add" on the bottom left
 4. Press "Browse..." and select the color profile you downloaded
 5. Enable the "Add as HDR Profile" checkbox (sometimes called "Advanced color")
-7. Press "OK"
-8. Select the color profile you added and press "Set as Default Profile"
-9. Done
+6. Press "OK"
+7. Select the color profile you added and press "Set as Default Profile"
+8. Done
+
+<h2 id='alt-sln'>Alternate procedure / custom profile</h2>
+
+Rather than applying an MHC2 color profile, we can use ArgyllCMS' `applycal` utility to load the transformation instead. The benefit of this is that we can generate and apply any arbitrary LUT independent of color profile. This lets you create transformations with your desired SDR white level and gamma power, and we can instead rely on the profile created by Windows HDR Calibration tool for proper HDR metadata signalling.
+
+1. Download the [release .zip](https://github.com/dylanraga/win11hdr-srgb-to-gamma2.2-icm/releases) from this repo and unzip the contents to a folder where it will permanently reside.
+2. Generate a LUT file [from my web tool](https://dylanraga.github.io/gen-srgb-to-gamma-lut/).
+3. Open `lut.cal` from step 1 and paste in the contents of LUT generated in step 2, completely replacing the original contents of the file.
+   - By default, the file contains the LUT for converting from a white level of 200 and a gamma power of 2.2.
+4. Run `srgb-to-gamma.bat` to apply the transformation.
+   - Run `revert.bat` to undo the transformation.
+5. Run `auto-start.bat` as administrator to apply the transformation on boot.
+   - It is not necessary to re-run this when changing the .cal file, but is required if the folder is relocated.
+6. (Optional) To re-apply the transformation on resume from sleep / screen-saver:
+   - Open Windows Task Schedular (Win+R, `taskschd.msc`), and doube click the task name "Apply sRGB to Gamma LUT"
+   - In the "Trigers" tab, press "New..." to add a new trigger:
+   - Set "Begin the task" to "On an event"
+   - Set "Log" to "System"
+   - Set "Source" to "Power-Troubleshooter"
+   - Set "Event ID" to "1"
+   - Press "OK" to create the trigger, and "OK" again to finish changing the task.
+
+An AutoHotkey script has also been created by [@mspeedo](https://github.com/mspeedo) to apply transformations with varying SDR white levels and gamma powers on the fly. This also adds a key bind to toggle the transformation, which is helpful when viewing native HDR content. You can take a look at it [here](https://github.com/dylanraga/win11hdr-srgb-to-gamma2.2-icm/issues/7).
+
+<h1>Appendix</h1>
 
 ## Windows SDR content brightness table
 
@@ -81,10 +107,6 @@ An accurate curve mapping does depend on Window's _SDR content brightness_ value
 | 55                   | 300 nits                   |
 | 80                   | 400 nits                   |
 | 100                  | 480 nits                   |
-
-## Dynamic application with AutoHotkey
-
-A script has been created by [@mspeedo](https://github.com/mspeedo) to apply the tone correction curve for different white levels and gamma power exponents! You can take a look at it [here](https://github.com/dylanraga/win11hdr-srgb-to-gamma2.2-icm/issues/7).
 
 ## Notes
 
