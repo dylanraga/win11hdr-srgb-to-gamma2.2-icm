@@ -83,7 +83,10 @@ Rather than applying an MHC2 color profile, we can use ArgyllCMS' `applycal` uti
    - Run `revert.bat` to undo the transformation.
 5. Run `auto-start.bat` as administrator to apply the transformation on boot.
    - It is not necessary to re-run this when changing the .cal file, but is required if the folder is relocated.
-6. (Optional) To re-apply the transformation on resume from sleep / screen-saver:
+
+In recent builds of Windows 11, the gamma transformation can be undone when resuming from certain standby conditions. As an additional step, we can create an automated task that re-applies the transformation.
+
+(Optional) To re-apply the transformation on resume from sleep / screen-saver:
    - Open Windows Task Schedular (Win+R, `taskschd.msc`), and doube click the task name "Apply sRGB to Gamma LUT"
    - In the "Trigers" tab, press "New..." to add a new trigger:
    - Set "Begin the task" to "On an event"
@@ -91,6 +94,7 @@ Rather than applying an MHC2 color profile, we can use ArgyllCMS' `applycal` uti
    - Set "Source" to "Power-Troubleshooter"
    - Set "Event ID" to "1"
    - Press "OK" to create the trigger, and "OK" again to finish changing the task.
+  
 
 An AutoHotkey script has also been created by [@mspeedo](https://github.com/mspeedo) to apply transformations with varying SDR white levels and gamma powers on the fly. This also adds a key bind to toggle the transformation, which is helpful when viewing native HDR content. You can take a look at it [here](https://github.com/dylanraga/win11hdr-srgb-to-gamma2.2-icm/issues/7).
 
