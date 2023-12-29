@@ -73,7 +73,7 @@ An accurate curve mapping does depend on Window's _SDR content brightness_ value
 
 <h2 id='alt-sln'>Alternate procedure / custom profile</h2>
 
-Rather than applying an MHC2 color profile, we can use ArgyllCMS' `applycal` utility to load the transformation instead. The benefit of this is that we can generate and apply any arbitrary LUT independent of color profile. This lets you create transformations with your desired SDR white level and gamma power, and we can instead rely on the profile created by Windows HDR Calibration tool for proper HDR metadata signalling.
+Rather than applying an MHC2 color profile, we can use ArgyllCMS' `dispwin` utility to load the transformation instead. The benefit of this is that we can generate and apply any arbitrary LUT independent of color profile. This lets you create transformations with your desired SDR white level and gamma power, and we can instead rely on the profile created by Windows HDR Calibration tool for proper HDR metadata signalling.
 
 1. Download the [release .zip](https://github.com/dylanraga/win11hdr-srgb-to-gamma2.2-icm/releases) from this repo and unzip the contents to a folder where it will permanently reside.
 2. Generate a LUT file [from my web tool](https://dylanraga.github.io/gen-srgb-to-gamma-lut/).
