@@ -29,16 +29,16 @@ Diablo IV looks absolutely spectacular in SDR, with deep shadow detail and excel
 
 On the other hand, there have been countless complaints about the game looking washed out when HDR is enabled, swaying many players to simply enjoy the game in SDR. When HDR is enabled, rich blacks turn into dull grays, and the game's atmosphere turns hazy, losing much of its depth. The primary cause of this is — _you guessed it_ — the piecewise sRGB tone curve that Windows uses in HDR.
 
-We can plot the output luminance of sRGB vs. gamma 2.2 to see the the concrete differences:
+We can plot the output luminance of sRGB vs. gamma 2.2 to see the concrete differences:
 
 | ![Gamma 2.2 vs Piecewise sRGB chart](./srgb_vs_g22.png)                                                                                   |
 | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| _Gamma 2.2 vs Piecewise sRGB chart. The luminance axis is in log space since our eyes perceive the sensation of lightess logarithmically_ |
+| _Gamma 2.2 vs Piecewise sRGB chart. The luminance axis is in log space since our eyes perceive the sensation of lightness logarithmically_ |
 
 s
 Here, the discrepancy between gamma 2.2 and sRGB is obvious. The sRGB curve is fundamentally much lighter below the mid-tones, making content mastered in gamma-2.2 appear flat when viewed with an sRGB transfer.
 
-macOS currently offers a nice solution, allowing its users to create their own custom reference mode in the dispay settings. Among a few others, one of the custom parameters is the _SDR Transfer Function_, which the user can pick between BT.1886 (for film), a pure gamma (2.2, for PC use), or piecewise sRGB (for treason).
+macOS currently offers a nice solution, allowing its users to create their own custom reference mode in the display settings. Among a few others, one of the custom parameters is the _SDR Transfer Function_, which the user can pick between BT.1886 (for film), a pure gamma (2.2, for PC use), or piecewise sRGB (for treason).
 
 | ![macOS custom reference mode](./macos_crf.png)                               |
 | ----------------------------------------------------------------------------- |
@@ -46,7 +46,7 @@ macOS currently offers a nice solution, allowing its users to create their own c
 
 # Temporary solution
 
-This is a problem that ultimately requires Microsoft to fully rectify, so in the meantime we'll need to resort to a band-aid fix. By using an MHC2 ICC profile, we can apply a system gamma ramp that transforms the SDR sRGB curve into a 2.2 gamma curve.
+This is a problem that ultimately requires Microsoft to rectify fully, so in the meantime we'll need to resort to a band-aid fix. By using an MHC2 ICC profile, we can apply a system gamma ramp that transforms the SDR sRGB curve into a 2.2 gamma curve.
 
 The caveat with this solution is that _all_ content takes on the same transformation, including native HDR10 implementations, which don't need it; such content will see slightly darker shadows, potentially crushing shadow detail. You can either disable the color profile when viewing native HDR content, or just live with the slight boost in contrast for the sake of convenience.
 
@@ -73,7 +73,7 @@ An accurate curve mapping does depend on Window's _SDR content brightness_ value
 
 <h2 id='alt-sln'>Alternate procedure / custom profile</h2>
 
-Rather than applying an MHC2 color profile, we can use ArgyllCMS' `dispwin` utility to load the transformation instead. The benefit of this is that we can generate and apply any arbitrary LUT independent of color profile. This lets you create transformations with your desired SDR white level and gamma power, and we can instead rely on the profile created by Windows HDR Calibration tool for proper HDR metadata signalling.
+Rather than applying an MHC2 color profile, we can use ArgyllCMS' `dispwin` utility to load the transformation instead. The benefit of this is that we can generate and apply any arbitrary LUT independent of color profile. This lets you create transformations with your desired SDR white level and gamma power, and we can instead rely on the profile created by Windows HDR Calibration tool for proper HDR metadata signaling.
 
 1. Download the [release .zip](https://github.com/dylanraga/win11hdr-srgb-to-gamma2.2-icm/releases) from this repo and unzip the contents to a folder where it will permanently reside.
 2. Generate a LUT file [from my web tool](https://dylanraga.github.io/gen-srgb-to-gamma-lut/).
@@ -88,7 +88,7 @@ In recent builds of Windows 11, the gamma transformation can be undone when resu
 
 (Optional) To re-apply the transformation on resume from sleep / screen-saver:
    - Open Windows Task Schedular (Win+R, `taskschd.msc`), and doube click the task name "Apply sRGB to Gamma LUT"
-   - In the "Trigers" tab, press "New..." to add a new trigger:
+   - In the "Triggers" tab, press "New..." to add a new trigger:
    - Set "Begin the task" to "On an event"
    - Set "Log" to "System"
    - Set "Source" to "Power-Troubleshooter"
