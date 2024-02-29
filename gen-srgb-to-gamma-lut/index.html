@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>sRGB-to-gamma LUT generator</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div>
+			<h1 class="title">Generate 1D LUT: sRGB ➔ Pure Power</h1>
+			<form class="form-box" id="form">
+				<div>
+					<label>SDR White</label>
+					<div class="white-field">
+						<div>
+							<input
+								type="number"
+								id="whiteLevel"
+								name="whiteLevel"
+								value="200"
+								step="10"
+							/>
+							<small>nits</small>
+						</div>
+						<p>=</p>
+						<div>
+							<small>Windows Content Brightness Value</small>
+							<input type="number" id="cbv" value="30" step="1" />
+						</div>
+					</div>
+				</div>
+				<div>
+					<label>Gamma Power</label>
+					<input type="number" name="gammaPower" value="2.2" step="0.1" />
+				</div>
+				<div>
+					<label>Black Floor</label>
+					<div>
+						<input type="number" name="blackLevel" value="0.0" step="0.0001" />
+						<small><em>Increase if experiencing black crush</em></small>
+					</div>
+				</div>
+				<div>
+					<label>Method</label>
+					<div class="method-field">
+						<div>
+							<input
+								id="nvidia-method"
+								name="method"
+								type="radio"
+								value="nvidia"
+								checked
+							/>
+							<label for="nvidia-method">NVIDIA</label>
+						</div>
+						<div>
+							<input id="amd-method" name="method" type="radio" value="amd" />
+							<label for="amd-method">AMD</label>
+						</div>
+					</div>
+				</div>
+
+				<div>
+					<button class="submit-btn">Generate</button>
+				</div>
+			</form>
+
+			<div class="result-box">
+				<label>CODE</label>
+				<textarea id="result-txt" readonly>. . .</textarea>
+				<em>
+					<small>
+						Paste the contents above into a *.cal file, then apply it with
+						ArgyllCMS dispwin
+					</small>
+				</em>
+			</div>
+		</div>
+
+		<script src="script.js" defer></script>
+	</body>
+</html>
