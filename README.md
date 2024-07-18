@@ -35,7 +35,6 @@ We can plot the output luminance of sRGB vs. gamma 2.2 to see the concrete diffe
 | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | _Gamma 2.2 vs Piecewise sRGB chart. The luminance axis is in log space since our eyes perceive the sensation of lightness logarithmically_ |
 
-s
 Here, the discrepancy between gamma 2.2 and sRGB is obvious. The sRGB curve is fundamentally much lighter below the mid-tones, making content mastered in gamma-2.2 appear flat when viewed with an sRGB transfer.
 
 macOS currently offers a nice solution, allowing its users to create their own custom reference mode in the display settings. Among a few others, one of the custom parameters is the _SDR Transfer Function_, which the user can pick between BT.1886 (for film), a pure gamma (2.2, for PC use), or piecewise sRGB (for treason).
@@ -59,6 +58,7 @@ An accurate curve mapping does depend on Window's _SDR content brightness_ value
 - [300 nits / Brightness 55](https://github.com/dylanraga/win11hdr-srgb-to-gamma2.2-icm/raw/main/srgb_to_gamma2p2_300_mhc2.icm)
 - [400 nits / Brightness 80](https://github.com/dylanraga/win11hdr-srgb-to-gamma2.2-icm/raw/main/srgb_to_gamma2p2_400_mhc2.icm)
 - [Unspecified](https://github.com/dylanraga/win11hdr-srgb-to-gamma2.2-icm/raw/main/srgb_to_gamma2p2_unspecified.icm)
+- [SDR](https://github.com/dylanraga/win11hdr-srgb-to-gamma2.2-icm/raw/main/srgb_to_gamma2p2_sdr.icm)
 
 ## Instructions
 
