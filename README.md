@@ -95,8 +95,18 @@ In recent builds of Windows 11, the gamma transformation can be undone when resu
    - Set "Event ID" to "1"
    - Press "OK" to create the trigger, and "OK" again to finish changing the task.
   
+<h2 id='mlt-scr'>How to use it in multi screen scenario</h2>
+
+1. Use *Alternate procedure / custom profile* mentioned above. You can also use other scripts/GUI with `dispwin.exe` backend (mentioned at the end of this section)
+2. Edit the "srgb-to-gamma.bat"
+_In my case, I have 2 monitor in windows settings: monitor 1 as HDR main screen and monitor 2 as SDR side screen. Now I want to apply the gamma transform on HDR screen instead of my SDR screen (default behavior). _
+   - change the "srgb-to-gamma.bat" from `".\dispwin.exe" ".\lut.cal"` to  `".\dispwin.exe" "-d 2" ".\lut.cal"`
+   - remember to edit “revert.bat” from `".\dispwin.exe" -c` to  `".\dispwin.exe" -d 2 -c` as well so you can revert the same screen.
+if you have more than 2 screen, just try "-d 3", "-d 4" ,etc.
 
 An AutoHotkey script has also been created by [@mspeedo](https://github.com/mspeedo) to apply transformations with varying SDR white levels and gamma powers on the fly. This also adds a key bind to toggle the transformation, which is helpful when viewing native HDR content. You can take a look at it [here](https://github.com/dylanraga/win11hdr-srgb-to-gamma2.2-icm/issues/7).
+
+Also, you may check the GUI application [win11hdr-srgb-to-gamma2.2-ahk](https://github.com/Animesh-Does-Code/win11hdr-srgb-to-gamma2.2-ahk) created by [@Animesh-Does-Code](https://github.com/Animesh-Does-Code)  You can shift gamma curve by hot key WIN+F1/F2 and easily compare them. It's competible with multi screens after [simple modification](https://github.com/Animesh-Does-Code/win11hdr-srgb-to-gamma2.2-ahk/issues/3) to its script.
 
 <h1>Appendix</h1>
 
